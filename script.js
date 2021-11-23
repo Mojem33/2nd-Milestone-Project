@@ -7,18 +7,18 @@ let score=0;
 let gameFrame=0;
 ctx.font=  50px serif;
 let canvasPosition=canvas.getBoundingClientRect();
-const mouse={
+const pointer={
     x: canvas.width/2
     y: canvas.height/2
     click:false
-    mouse.click=true
+    pointer.click=true
 }
-canvas.addEventListner('mousedown', function(event)){
-    mouse.x=event.x-canvasPosition.left;
-    mouse.y=event.y-canvasPosition.top;
+canvas.addEventListner('pointerdown', function(event)){
+    pointer.x=event.x-canvasPosition.left;
+    pointer.y=event.y-canvasPosition.top;
 }
-canvas.addEventListener('mouseup' function(event)){
-    mouse.click=false;
+canvas.addEventListener('pointerup' function(event)){
+    pointer.click=false;
 }
 Class Player{
     const PlayerLeft=new Image();
@@ -37,24 +37,24 @@ Class Player{
     }
     update()
     {
-        const dx=this.x-mouse.x;
-        const dy=this.y-mouse.y;
+        const dx=this.x-pointer.x;
+        const dy=this.y-pointer.y;
         let theta= Math.atan2(dy,dx);
         this.angle=theta;
     }
-    if (mouse.x!=this.x){
+    if (pointer.x!=this.x){
         this.x-=dx/25;
     }
-    if (mouse.y !=this.y){
+    if (pointer.y !=this.y){
         this.y=dy/25;
     }
     draw()
     {
-        if (mouse.click){
+        if (pointer.click){
             ctx.lineWidth=0.2;
             ctx.beginPath();
             ctx.moveTo(this.x, this.y);
-            ctx.lineTo(mouse.x, mouse.y);
+            ctx.lineTo(pointer.x, pointer.y);
             ctx.stroke();
         }
         ctx.fillstyle='gold';
@@ -62,11 +62,11 @@ Class Player{
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
         ctx.fill();
         ctx.closePath();
-        ctxfillRect(this.x, this.y, this.radius, 10);
+        ctx.fillRect(this.x, this.y, this.radius, 10);
         ctx.save();
         ctx.translate(this.x, this.y);
         ctx.rotate(this.angle);
-        if(this.x>=mouse.x){
+        if(this.x>=pointer.x){
             ctx.drawImage(playerRight, this.frameX*this.spriteWidth, this.frameY*this.spriteHeight, 0-60, 0-45,this.spriteWith/4, this.spriteHeight/4);
             
         }
