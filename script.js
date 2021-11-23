@@ -78,7 +78,9 @@ Class Player{
         const player= new Player();
     }
     constcircleArray=[];
-    class Bubble{
+    class Circle{
+        const Circle=New Image();
+    Circle.src='black.bird';
         constructor(){
             this.x=Math.random()*canvas.width;
             this.y=canvas.Height+100+Math.random()*canvas.height;
