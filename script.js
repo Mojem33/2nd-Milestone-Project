@@ -5,7 +5,7 @@ canvas.height=500;
 
 let score=0;
 let gameFrame=0;
-ctx.font=  50px serif;
+ctx.font=  50 px serif;
 let canvasPosition=canvas.getBoundingClientRect();
 const pointer={
     x: canvas.width/2
