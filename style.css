@@ -16,18 +16,5 @@ body{
     height:500px;
     border:2px black;
 }
-button{
-    position:absolute;
-    button:15px;
-    left:50%;
-    transform:translate(-50%, 0);
-    background:grey
-    color: black;
-    padding: 25px, 50px;
-    border-radius: 5px;
-    z index:200;
-    cursor:pointer;
-    border:none;
-    outline:none;
-    
-}
+
+
