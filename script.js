@@ -22,9 +22,9 @@ canvas.addEventListener('pointerup' function(event)){
 }
 Class Player{
     const PlayerLeft=new Image();
-    PlayerLeft.src='plane.right';
+    PlayerLeft.src='plane.right.png';
     const PlayerRight=new Image();
-    PlayerRight.src='plane.left';
+    PlayerRight.src='plane.left.png';
     constructor(){
         this.x=canvas.width/2
         this.y=canvas.height/2
@@ -80,7 +80,7 @@ Class Player{
     constcircleArray=[];
     class Circle{
         const Circle=New Image();
-    Circle.src='black.bird';
+    Circle.src='black.bird.png';
         constructor(){
             this.x=Math.random()*canvas.width;
             this.y=canvas.Height+100+Math.random()*canvas.height;
