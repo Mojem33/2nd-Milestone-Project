@@ -70,14 +70,14 @@ Class Player{
             ctx.drawImage(playerRight, this.frameX*this.spriteWidth, this.frameY*this.spriteHeight, 0-60, 0-45,this.spriteWith/4, this.spriteHeight/4);
             
         }
-        else{
+        if (else){
             ctx.drawImage(playerLeft, this.frameX*this.spriteWidth, this.frameY*this.spriteHeight, 0-60, 0-45,this.spriteWith/4, this.spriteHeight/4);
 
         }
         ctx.restore();
         const player= new Player();
     }
-    constbubbleArray=[];
+    constcircleArray=[];
     class Bubble{
         constructor(){
             this.x=Math.random()*canvas.width;
@@ -104,39 +104,40 @@ Class Player{
             ctx.closePath();
             ctx.stroke();
         }
-    }constbubblePop1=document.createElement('audio');
-    bubblePop1.src='SHOOT011.mp3';
-    constbubblePop2=document.createElement('audio');
-    bubblePop2.src='SHOOT012.mp3';
+    }
+        constcirclePop1=document.createElement('audio');
+    circlePop1.src='SHOOT011.mp3';
+    constcirclePop2=document.createElement('audio');
+    circlePop2.src='SHOOT012.mp3';
 
 }
 function handleBubbles(){
     if(gamrFrame %50==0){
-        bubblesarray.push(newBubble());
+        circlesarray.push(newCircle());
     }
-    for(let i=0; i<bubblesArray.lenght, i++){
-        bubblesarray[i].update(); bubbles.radius*2
-        bubblesArray[i].draw();
+    for(let i=0; i<circlesArray.lenght, i++){
+        circlesarray[i].update(); circles.radius*2
+        circlesArray[i].draw();
     }
-    for(let i=0; i<bubblesArray.lenght; i++){
-        if(bubblesArray[i].y<0){
-            bubblesArray.slice(i,1);
+    for(let i=0; i<circlesArray.lenght; i++){
+        if(circlesArray[i].y<0){
+            circlesArray.slice(i,1);
         }
-    }if(bubblesArray[i].distance<bubblesArray[i].radius+player.radius){
+    }if(circlesArray[i].distance<circlesArray[i].radius+player.radius){
         (console.log('collision'));
     }
 }
-if(!bubblesArray[i].sound=='sound'){
-    bubblePop1.play();
+if(!circlesArray[i].sound=='sound'){
+    circlePop1.play();
 
-    else{
+   if (else){
     
-        bubblePop2.play();
+        circlePop2.play();
     }
-    if(bubblesArray[i].counted){
+    if(circlessArray[i].counted){
         score++;
-        bubblesArray[i].counted=true;
-        bubbles.splice(i,1);
+        circlessArray[i].counted=true;
+        circles.splice(i,1);
     }
 }
 function animate(){
