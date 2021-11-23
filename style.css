@@ -11,7 +11,7 @@ body{
     align-items: center;
 }
 #canvas1{
-    background-image:'.style sndimg/skybackgroundgrren.png ';
+    background-image:'skybackgroundgrren.png ';
     width:800px;
     height:500px;
     border:2px black;
